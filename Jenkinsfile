@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+         AWS_ACCESS_KEY_ID     = credentials('my-aws-creds')
+         AWS_SECRET_ACCESS_KEY = credentials('my-aws-creds')
+    }
     stages {
         stage('Submit Stack') {
             steps {
